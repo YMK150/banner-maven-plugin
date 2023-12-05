@@ -3,19 +3,18 @@ package com.yinmk;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.NameFileFilter;
 import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Collection;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Optional;
 
 /**
@@ -55,7 +54,7 @@ public class BannerMojo extends AbstractMojo {
     }
 
     private String handelBannerContent(String banner) {
-        banner = banner.replace("${build.time}", new Date().toString());
+        banner = banner.replace("${build.time}", DateTimeFormatter.ISO_DATE_TIME.format(LocalDateTime.now()));
         return banner;
     }
 

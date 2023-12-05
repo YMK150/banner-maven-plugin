@@ -4,7 +4,7 @@
 
   <groupId>com.yinmk</groupId>
   <artifactId>banner-maven-plugin</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>maven-plugin</packaging>
 
   <name>banner-maven-plugin Maven Plugin</name>
